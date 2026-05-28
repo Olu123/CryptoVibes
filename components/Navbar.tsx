@@ -52,7 +52,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold text-lg shrink-0">
           <span className="text-brand-500 text-2xl">⛓</span>
-          <span className="hidden sm:block text-gray-900 dark:text-white">Crypto<span className="text-brand-500">Feed</span></span>
+          <span className="hidden sm:block text-gray-900 dark:text-white">Crypto<span className="text-brand-500">Vibes</span></span>
         </Link>
 
         {/* Desktop Nav */}
