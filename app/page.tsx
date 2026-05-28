@@ -94,10 +94,13 @@ export default async function HomePage({
     <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8">
       {/* Main Feed */}
       <div>
-        {/* Ad slot (Coinzilla/A-ADS will replace this div) */}
-        <div className="card p-3 mb-4 text-center text-xs text-gray-400 border-dashed">
-          <span className="opacity-50">[ Ad slot — Coinzilla / A-ADS ]</span>
-          <a href="/advertise" className="ml-2 text-brand-500 font-medium hover:underline">Advertise here</a>
+        {/* A-ADS Ad Unit 2439535 */}
+        <div className="mb-4" style={{ width: '728px', maxWidth: '100%', margin: '0 auto 1rem' }}>
+          <iframe
+            data-aa='2439535'
+            src='//ad.a-ads.com/2439535/?size=728x90'
+            style={{ border: 0, padding: 0, width: '728px', maxWidth: '100%', height: '90px', overflow: 'hidden', display: 'block', margin: 'auto' }}
+          />
         </div>
 
         {/* Filter bar */}
