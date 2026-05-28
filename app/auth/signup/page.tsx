@@ -52,7 +52,7 @@ export default function SignupPage() {
       <div className="card p-8">
         <div className="text-center mb-6">
           <span className="text-4xl">⛓</span>
-          <h1 className="text-xl font-bold mt-2 text-gray-900 dark:text-white">Join CryptoFeed</h1>
+          <h1 className="text-xl font-bold mt-2 text-gray-900 dark:text-white">Join CryptoVibes</h1>
           <p className="text-sm text-gray-500 mt-1">Free forever. Submit stories, earn karma.</p>
         </div>
         <form onSubmit={handleSignup} className="space-y-4">

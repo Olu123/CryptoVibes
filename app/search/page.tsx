@@ -2,7 +2,7 @@ import { createServerSupabaseClient } from '@/lib/supabase-server'
 import StoryCard from '@/components/StoryCard'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = { title: 'Search — CryptoFeed' }
+export const metadata: Metadata = { title: 'Search — CryptoVibes' }
 
 export default async function SearchPage({ searchParams }: { searchParams: { q?: string } }) {
   const q = searchParams.q ?? ''
@@ -20,7 +20,7 @@ export default async function SearchPage({ searchParams }: { searchParams: { q?:
   return (
     <div className="max-w-4xl mx-auto">
       <h1 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-        {q ? `Search: "${q}"` : 'Search CryptoFeed'}
+        {q ? `Search: "${q}"` : 'Search CryptoVibes'}
       </h1>
 
       {!q && (

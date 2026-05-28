@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
-export const metadata: Metadata = { title: 'Go Pro — CryptoFeed' }
+export const metadata: Metadata = { title: 'Go Pro — CryptoVibes' }
 
 const features = [
   { icon: '🚫', label: 'Ad-free experience', free: false, pro: true },
@@ -18,7 +18,7 @@ export default function ProPage() {
     <div className="max-w-2xl mx-auto">
       <div className="text-center mb-10">
         <span className="text-5xl">⭐</span>
-        <h1 className="text-3xl font-bold mt-3 text-gray-900 dark:text-white">CryptoFeed Pro</h1>
+        <h1 className="text-3xl font-bold mt-3 text-gray-900 dark:text-white">CryptoVibes Pro</h1>
         <p className="text-gray-500 mt-2">Support independent crypto journalism. Get the edge.</p>
       </div>
 

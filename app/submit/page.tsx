@@ -142,7 +142,7 @@ export default function SubmitPage() {
             </span>
           </label>
           <p className="text-xs text-amber-600 dark:text-amber-400 mt-1 ml-6">
-            CryptoFeed requires disclosure if you hold a token you're posting about. This increases your credibility, not decreases it.
+            CryptoVibes requires disclosure if you hold a token you're posting about. This increases your credibility, not decreases it.
           </p>
           {hasDisclosure && (
             <div className="mt-3 ml-6">

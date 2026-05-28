@@ -40,7 +40,7 @@ export default function LoginPage() {
         <div className="text-center mb-6">
           <span className="text-4xl">⛓</span>
           <h1 className="text-xl font-bold mt-2 text-gray-900 dark:text-white">Welcome back</h1>
-          <p className="text-sm text-gray-500 mt-1">Sign in to CryptoFeed</p>
+          <p className="text-sm text-gray-500 mt-1">Sign in to CryptoVibes</p>
         </div>
 
         {/* OAuth */}

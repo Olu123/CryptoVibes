@@ -1,5 +1,5 @@
 /**
- * CryptoFeed Credibility Scoring Engine
+ * CryptoVibes Credibility Scoring Engine
  *
  * Credibility is computed from multiple signals:
  * - Source reputation (community-rated, 0–100)

@@ -207,7 +207,7 @@ export default async function HomePage({
 
         {/* About box */}
         <div className="card p-5">
-          <h3 className="font-bold text-gray-900 dark:text-white mb-2">⛓ About CryptoFeed</h3>
+          <h3 className="font-bold text-gray-900 dark:text-white mb-2">⛓ About CryptoVibes</h3>
           <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
             The only crypto aggregator with a <strong>Credibility Score</strong> on every story, 
             <strong> Narrative Threading</strong> for ongoing topics, and a 
@@ -215,11 +215,11 @@ export default async function HomePage({
             Community-powered. Truth-scored.
           </p>
           <div className="flex gap-2 mt-3">
-            <a href="https://x.com/cryptofeedapp" target="_blank" rel="noopener noreferrer"
+            <a href="https://x.com/cryptovibesapp" target="_blank" rel="noopener noreferrer"
               className="badge bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-sky-500 transition-colors">
-              𝕏 @cryptofeedapp
+              𝕏 @cryptovibesapp
             </a>
-            <a href="https://bsky.app/profile/cryptofeed.bsky.social" target="_blank" rel="noopener noreferrer"
+            <a href="https://bsky.app/profile/cryptovibes.bsky.social" target="_blank" rel="noopener noreferrer"
               className="badge bg-blue-50 dark:bg-blue-900/20 text-blue-600 hover:text-blue-700 transition-colors">
               🦋 Bluesky
             </a>

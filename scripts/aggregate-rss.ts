@@ -1,5 +1,5 @@
 /**
- * CryptoFeed RSS Aggregator
+ * CryptoVibes RSS Aggregator
  * Run with: npm run aggregate
  * Or schedule via GitHub Actions / Vercel Cron
  */
@@ -31,7 +31,7 @@ function autoCategory(title: string): string {
 
 async function fetchFeed(url: string): Promise<Array<{ title: string; link: string; summary?: string; pubDate?: string }>> {
   const res = await fetch(url, {
-    headers: { 'User-Agent': 'CryptoFeed/1.0' },
+    headers: { 'User-Agent': 'CryptoVibes/1.0' },
     signal: AbortSignal.timeout(10000),
   })
   if (!res.ok) throw new Error(`HTTP ${res.status}`)
@@ -51,7 +51,7 @@ async function fetchFeed(url: string): Promise<Array<{ title: string; link: stri
 }
 
 async function main() {
-  console.log('🔗 CryptoFeed RSS Aggregator starting…')
+  console.log('🔗 CryptoVibes RSS Aggregator starting…')
   const { data: feeds } = await supabase
     .from('rss_feeds')
     .select('*, source:sources(id, name, credibility_score, language)')

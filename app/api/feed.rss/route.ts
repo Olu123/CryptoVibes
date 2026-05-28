@@ -10,7 +10,7 @@ export async function GET() {
     .order('published_at', { ascending: false })
     .limit(50)
 
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://cryptofeed.app'
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://cryptovibes.app'
   const items = (stories ?? []).map((s: { id: string; title: string; url: string; summary: string | null; published_at: string }) => `
     <item>
       <title><![CDATA[${s.title}]]></title>
@@ -23,7 +23,7 @@ export async function GET() {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>CryptoFeed</title>
+    <title>CryptoVibes</title>
     <link>${appUrl}</link>
     <description>Credible crypto and blockchain news, community-ranked.</description>
     <language>en-us</language>

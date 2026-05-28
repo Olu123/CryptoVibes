@@ -1,7 +1,7 @@
 import { createServerSupabaseClient } from '@/lib/supabase-server'
 import StoryCard from '@/components/StoryCard'
 import type { Metadata } from 'next'
-export const metadata: Metadata = { title: 'Regulation Radar — CryptoFeed' }
+export const metadata: Metadata = { title: 'Regulation Radar — CryptoVibes' }
 
 const COUNTRIES = [
   { code: 'US', name: 'United States', flag: '🇺🇸', status: 'complex', color: 'bg-yellow-100 text-yellow-700' },

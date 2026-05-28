@@ -22,7 +22,7 @@ export async function POST(request: Request) {
   for (const feed of feeds ?? []) {
     try {
       const res = await fetch(feed.feed_url, {
-        headers: { 'User-Agent': 'CryptoFeed/1.0 (+https://cryptofeed.app)' },
+        headers: { 'User-Agent': 'CryptoVibes/1.0 (+https://cryptovibes.app)' },
         signal: AbortSignal.timeout(8000),
       })
       if (!res.ok) throw new Error(`HTTP ${res.status}`)

@@ -3,18 +3,18 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 
 export const metadata: Metadata = {
-  title: { default: 'CryptoFeed — Credible Crypto News', template: '%s | CryptoFeed' },
+  title: { default: 'CryptoVibes — Credible Crypto News', template: '%s | CryptoVibes' },
   description: 'The most credible crypto and blockchain news aggregator. User-submitted, community-ranked, truth-scored.',
   keywords: ['crypto news', 'blockchain news', 'bitcoin', 'ethereum', 'defi', 'web3'],
   openGraph: {
     type: 'website',
-    title: 'CryptoFeed — Credible Crypto News',
+    title: 'CryptoVibes — Credible Crypto News',
     description: 'User-submitted, community-ranked, truth-scored crypto news.',
     images: [{ url: '/og-image.png' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'CryptoFeed',
+    title: 'CryptoVibes',
     description: 'Credible crypto news, ranked by the community.',
   },
 }
@@ -39,13 +39,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <a href="/graveyard" className="hover:text-brand-500 transition-colors">Misinformation Graveyard</a>
             <a href="/predictions" className="hover:text-brand-500 transition-colors">Predictions</a>
             <a href="/api/feed.rss" className="hover:text-brand-500 transition-colors">RSS</a>
-            <a href="https://x.com/cryptofeedapp" target="_blank" rel="noopener noreferrer" className="hover:text-sky-500 transition-colors">𝕏 Twitter</a>
-            <a href="https://bsky.app/profile/cryptofeed.bsky.social" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors">🦋 Bluesky</a>
+            <a href="https://x.com/cryptovibesapp" target="_blank" rel="noopener noreferrer" className="hover:text-sky-500 transition-colors">𝕏 Twitter</a>
+            <a href="https://bsky.app/profile/cryptovibes.bsky.social" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors">🦋 Bluesky</a>
             <a href="/advertise" className="hover:text-brand-500 transition-colors">Advertise</a>
             <a href="/pro" className="hover:text-brand-500 transition-colors">⭐ Go Pro</a>
           </div>
           <p className="mt-4 text-xs text-gray-300 dark:text-gray-600">
-            © {new Date().getFullYear()} CryptoFeed. Community-powered. Truth-scored.
+            © {new Date().getFullYear()} CryptoVibes. Community-powered. Truth-scored.
           </p>
         </footer>
       </body>
