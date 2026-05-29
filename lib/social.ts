@@ -134,8 +134,7 @@ export async function postToTwitter(title: string, storyUrl: string): Promise<vo
 
 export async function announceStory(title: string, url: string, storyId: string): Promise<void> {
   const storyUrl = `${process.env.NEXT_PUBLIC_APP_URL}/story/${storyId}`
-  await Promise.allSettled([
-    postToBluesky(title, url, storyUrl),
-    postToTwitter(title, storyUrl),
-  ])
+  // Twitter disabled — API credits depleted (free tier). Re-enable when upgraded.
+  // Use Zapier + RSS feed for X auto-posting in the meantime.
+  await postToBluesky(title, url, storyUrl)
 }
