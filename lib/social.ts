@@ -3,7 +3,10 @@ import crypto from 'crypto'
 // ─── Bluesky ──────────────────────────────────────────────────────────────────
 
 async function blueskyAuth(): Promise<{ accessJwt: string; did: string } | null> {
-  if (!process.env.BLUESKY_IDENTIFIER || !process.env.BLUESKY_APP_PASSWORD) return null
+  if (!process.env.BLUESKY_IDENTIFIER || !process.env.BLUESKY_APP_PASSWORD) {
+    console.error('Bluesky: missing env vars')
+    return null
+  }
   try {
     const res = await fetch('https://bsky.social/xrpc/com.atproto.server.createSession', {
       method: 'POST',
@@ -13,9 +16,16 @@ async function blueskyAuth(): Promise<{ accessJwt: string; did: string } | null>
         password: process.env.BLUESKY_APP_PASSWORD,
       }),
     })
-    if (!res.ok) return null
+    if (!res.ok) {
+      const err = await res.text()
+      console.error('Bluesky auth failed:', res.status, err)
+      return null
+    }
     return await res.json()
-  } catch { return null }
+  } catch (e) {
+    console.error('Bluesky auth error:', e)
+    return null
+  }
 }
 
 export async function postToBluesky(title: string, url: string, storyUrl: string): Promise<void> {
@@ -49,7 +59,7 @@ export async function postToBluesky(title: string, url: string, storyUrl: string
   }
 
   try {
-    await fetch('https://bsky.social/xrpc/com.atproto.repo.createRecord', {
+    const postRes = await fetch('https://bsky.social/xrpc/com.atproto.repo.createRecord', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -57,6 +67,12 @@ export async function postToBluesky(title: string, url: string, storyUrl: string
       },
       body: JSON.stringify({ repo: session.did, collection: 'app.bsky.feed.post', record }),
     })
+    if (!postRes.ok) {
+      const err = await postRes.text()
+      console.error('Bluesky post failed:', postRes.status, err)
+    } else {
+      console.log('Bluesky post success')
+    }
   } catch (e) {
     console.error('Bluesky post error:', e)
   }
@@ -98,11 +114,17 @@ export async function postToTwitter(title: string, storyUrl: string): Promise<vo
     .join(', ')
 
   try {
-    await fetch(tweetUrl, {
+    const tweetRes = await fetch(tweetUrl, {
       method: 'POST',
       headers: { Authorization: authHeader, 'Content-Type': 'application/json' },
       body: JSON.stringify({ text }),
     })
+    if (!tweetRes.ok) {
+      const err = await tweetRes.text()
+      console.error('Twitter post failed:', tweetRes.status, err)
+    } else {
+      console.log('Twitter post success')
+    }
   } catch (e) {
     console.error('Twitter post error:', e)
   }
