@@ -45,7 +45,27 @@ async function fetchFeed(url: string): Promise<Array<{ title: string; link: stri
     const pubDate = content.match(/<pubDate[^>]*>(.*?)<\/pubDate>/i)?.[1]?.trim()
     const description = content.match(/<description[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/description>/i)?.[1]
     const summary = description?.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&#039;/g, "'").substring(0, 400).trim()
-    const cleanTitle = title.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&#039;/g, "'").trim()
+    const cleanTitle = title
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#039;/g, "'")
+      .replace(/&#8216;/g, '‘')
+      .replace(/&#8217;/g, '’')
+      .replace(/&#8220;/g, '“')
+      .replace(/&#8221;/g, '”')
+      .replace(/&#8211;/g, '–')
+      .replace(/&#8212;/g, '—')
+      .replace(/&#8230;/g, '…')
+      .replace(/&rsquo;/g, '’')
+      .replace(/&lsquo;/g, '‘')
+      .replace(/&rdquo;/g, '”')
+      .replace(/&ldquo;/g, '“')
+      .replace(/&ndash;/g, '–')
+      .replace(/&mdash;/g, '—')
+      .replace(/&hellip;/g, '…')
+      .trim()
     return { title: cleanTitle, link, summary, pubDate }
   }).filter(item => item.title && item.link)
 }
