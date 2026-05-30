@@ -155,6 +155,23 @@ export default async function StoryPage({ params, searchParams }: {
           <span>{formatDate(story.published_at)}</span>
           <span>👁 {story.view_count.toLocaleString()} views</span>
           <CredibilityBadge score={story.credibility_score} size="md" />
+
+          {/* Share buttons */}
+          <div className="flex items-center gap-2 ml-auto">
+            <span className="text-xs text-gray-400">Share:</span>
+            <a
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(`${process.env.NEXT_PUBLIC_APP_URL}/story/${story.id}`)}`}
+              target="_blank" rel="noopener noreferrer"
+              className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-gray-900 hover:bg-black text-white text-xs font-medium transition-colors">
+              𝕏 Post
+            </a>
+            <a
+              href={`https://bsky.app/intent/compose?text=${encodeURIComponent(`${title}\n\n${process.env.NEXT_PUBLIC_APP_URL}/story/${story.id}\n\n#Crypto #CryptoNews`)}`}
+              target="_blank" rel="noopener noreferrer"
+              className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-blue-500 hover:bg-blue-600 text-white text-xs font-medium transition-colors">
+              🦋 Share
+            </a>
+          </div>
         </div>
 
         {/* Holding disclosure */}
