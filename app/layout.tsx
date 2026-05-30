@@ -27,6 +27,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="coinzilla" content="5edd07bf092fe7f28c965f083ffc80c0" />
         <meta name="google-site-verification" content="_Mj_-CyYExxVI1bzO_TL0rh1s11El8bXWQskgYsvKv0" />
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZF7K0LY7F" />
+        <script dangerouslySetInnerHTML={{ __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-BZF7K0LY7F');
+        `}} />
       </head>
       <body className="min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100">
         <Navbar />
